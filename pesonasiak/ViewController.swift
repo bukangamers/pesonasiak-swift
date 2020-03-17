@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  pesonasiak
-//
-//  Created by Jeffry  on 07/01/20.
-//  Copyright © 2020 Jeffry . All rights reserved.
-//
-
 import UIKit
 import WebKit
 class ViewController: UIViewController, WKUIDelegate {
@@ -13,6 +5,9 @@ class ViewController: UIViewController, WKUIDelegate {
     var webView: WKWebView!
     
     override func loadView() {
+        let preferences = WKPreferences()
+        preferences.javaScriptEnabled = true
+        
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.uiDelegate = self
